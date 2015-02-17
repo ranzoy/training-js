@@ -5,11 +5,17 @@
     <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
-    <form action="">
-        <textarea name="message" id="js-message" cols="30" rows="10"></textarea>
-        <button type="reset">reset</button>
-    </form>
-    <p>Symbols total: <b id="js-message-total">0</b>, left: <b id="js-message-left-symbols">0</b></p>
+    <div class="page">
+        <form action="">
+            <div class="message-box">
+                <textarea class="message-area" name="message" id="js-message" cols="30" rows="10"></textarea>
+                <div class="total-info">Symbols total: <b id="js-message-total">0</b></div>
+                <div class="total-info">Left symbols: <b id="js-message-left-symbols">0</b></div>
+            </div>
+            <button type="reset">reset</button>
+        </form>
+
+    </div>
     <script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>

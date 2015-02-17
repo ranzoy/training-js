@@ -2,3 +2,34 @@
     margin: 0;
     padding: 0;
 }
+button {
+    background: #50AEEE;
+    border:none;
+    border-radius:5px;
+    color:#fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 15px;
+}
+textarea {
+    resize: none;
+    border:1px solid #999;
+    border-radius:3px;
+    padding: 3px;
+}
+.message-box {
+    overflow: hidden;
+}
+.message-area {
+    float: left;
+    margin: 0 10px 10px 0;
+}
+.total-info {
+    overflow: hidden;
+    margin: 0 0 10px 0;
+}
+.page {
+    width: 990px;
+    margin: 0 auto;
+    padding: 15px;
+}
