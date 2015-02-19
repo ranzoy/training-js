@@ -1,27 +1,34 @@
-var maxSymbol = 140;
-var leftTotal = document.getElementById('js-message-left-symbols');
-var messageArea = document.getElementById('js-message');
+var maxChar = 10;
+var textChar = document.getElementById('js-message');
 var total = document.getElementById('js-message-total');
+var leftTotal = document.getElementById('js-message-left-symbols');
 
-leftTotal.innerHTML = maxSymbol;
+var textLength;
+var leftTotalCount;
 
-function symbolCounter(event) {
-    var messageLength = messageArea.value.length + 1;
-    var leftTotalLength = maxSymbol - messageLength - 1;
-    var symbolCode = event.charCode;
-    var symbolKey = event.keyCode;
+leftTotal.innerHTML = maxChar;
+//total.innerHTML = textLength;
 
-    console.log(event);
 
-    if(symbolCode !== 0 || symbolKey == 8 || symbolKey == 46 ){
-        total.innerHTML = messageLength;
-        leftTotal.innerHTML = leftTotalLength;
-    }
+var keydownEvent = function(event){
+    console.log('textLength is' + textLength);
+}
 
-    if(leftTotalLength <= 0 && symbolCode !== 0){
+var keyupEvent = function(event) {
+    textLength = textChar.value.length;
+
+    leftTotalCount = maxChar - textLength;
+
+    console.log(textLength);
+
+    if(leftTotalCount <= 0){
         event.preventDefault();
+    } else {
+        total.innerHTML = textLength;
+        leftTotal.innerHTML = leftTotalCount;
     }
 }
 
-messageArea.addEventListener("keypress", symbolCounter);
 
+textChar.addEventListener("keydown", keydownEvent);
+textChar.addEventListener("keyup", keyupEvent);

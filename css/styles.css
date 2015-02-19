@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+body {
+    font-family: 'Comic Sans MS';
+}
 button {
     background: #50AEEE;
     border:none;
@@ -10,6 +13,10 @@ button {
     font-weight: bold;
     text-transform: uppercase;
     padding: 10px 15px;
+    cursor: pointer;
+}
+button:hover {
+    background: #51BEFF;
 }
 textarea {
     resize: none;
