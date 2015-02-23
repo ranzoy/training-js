@@ -8,7 +8,6 @@ var textLength;
 var leftTotalCount;
 
 leftTotal.innerHTML = maxChar;
-//total.innerHTML = textLength;
 
 
 var keydownEvent = function(event){
