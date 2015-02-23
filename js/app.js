@@ -27,7 +27,7 @@ var keyupEvent = function(event) {
     textLength = textChar.value.length;
     leftTotalCount = maxChar - textLength;
 
-    if(leftTotalCount =>0){
+    if(leftTotalCount >= 0){
         total.innerHTML = textLength;
         leftTotal.innerHTML = leftTotalCount;
     }
