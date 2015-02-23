@@ -11,24 +11,23 @@ leftTotal.innerHTML = maxChar;
 
 
 var keydownEvent = function(event){
-    console.log('textLength is' + textLength);
-}
 
-var keyupEvent = function(event) {
     textLength = textChar.value.length;
-
     leftTotalCount = maxChar - textLength;
-
-    console.log(textLength);
 
     if(leftTotalCount <= 0){
         event.preventDefault();
-    } else {
-        total.innerHTML = textLength;
-        leftTotal.innerHTML = leftTotalCount;
     }
+}
+
+var keyupEvent = function(event) {
+
+
+    total.innerHTML = textLength;
+    leftTotal.innerHTML = leftTotalCount;
+
 }
 
 
 textChar.addEventListener("keydown", keydownEvent);
-textChar.addEventListener("keyup", keyupEvent);
+//textChar.addEventListener("keyup", keyupEvent);
