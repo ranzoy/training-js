@@ -6,6 +6,7 @@ var TextCounter = {
     textArea: null,
     textAreaTotal: null,
     textAreaLeft: null,
+    igonreKey: false,
     init: function() {
         this.textArea = document.getElementById('js-message');
         this.textAreaTotal = document.getElementById('js-message-total');
@@ -21,10 +22,21 @@ var TextCounter = {
     },
     keydownEvent: function(event){
         var symbolCode = event.keyCode;
+        var keyIgnoreArray = [8,16,17,35,36,37,38,39,40,46];
+
         this.textLength = this.textArea.value.length;
         this.textAreaLeftCount = this.maxChar - this.textLength;
-        if(this.textAreaLeftCount <=0 && symbolCode !==8 && symbolCode !==35 && symbolCode !==36 && symbolCode !==36 && symbolCode !==37 && symbolCode !==38 && symbolCode !==39 && symbolCode !==40 && symbolCode !==16 && symbolCode !==17 && symbolCode !==46){
-            event.preventDefault();
+        this.igonreKey = false;
+        if(this.textLength >= this.maxChar) {
+            for(var i=0; i < keyIgnoreArray.length; i++){
+                if(symbolCode == keyIgnoreArray[i]) {
+                    this.igonreKey = true;
+                    break;
+                }
+            }
+            if(!this.igonreKey){
+                event.preventDefault();
+            }
         }
     },
     keyupEvent: function(){
