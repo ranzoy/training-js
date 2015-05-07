@@ -6,7 +6,7 @@ var TextCounter = {
     textArea: null,
     textAreaTotal: null,
     textAreaLeft: null,
-    igonreKey: false,
+    ignoreKey: false,
     init: function() {
         this.textArea = document.getElementById('js-message');
         this.textAreaTotal = document.getElementById('js-message-total');
@@ -26,15 +26,15 @@ var TextCounter = {
 
         this.textLength = this.textArea.value.length;
         this.textAreaLeftCount = this.maxChar - this.textLength;
-        this.igonreKey = false;
+        this.ignoreKey = false;
         if(this.textLength >= this.maxChar) {
             for(var i=0; i < keyIgnoreArray.length; i++){
                 if(symbolCode == keyIgnoreArray[i]) {
-                    this.igonreKey = true;
+                    this.ignoreKey = true;
                     break;
                 }
             }
-            if(!this.igonreKey){
+            if(!this.ignoreKey){
                 event.preventDefault();
             }
         }
