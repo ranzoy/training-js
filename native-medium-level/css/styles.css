@@ -33,16 +33,16 @@ button:hover {
     line-height: 80px;
     background: #fff;
 }
-.click-100 {
+.red {
     background-color:#F50202;
 }
-.click-75 {
+.orange {
     background-color:#FC8505;
 }
-.click-50 {
+.yellow {
     background-color:#FCCF05;
 }
-.click-25 {
+.light-yellow {
     background-color:#FCF6A9;
 }
 .buttons-box {
