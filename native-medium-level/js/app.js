@@ -18,7 +18,7 @@ var clickGenerator = {
         this.resetBtn.addEventListener("click", this.resetResults.bind(this));
     },
     generateClick: function(){
-        alert('generate');
+        
     },
     showResults: function(){
         for(i=0;i<this.tiles.length; i++){
@@ -42,6 +42,7 @@ var clickGenerator = {
     resetResults: function(){
         for(i=0;i<this.tiles.length; i++){
             this.tiles[i].innerHTML = '';
+            this.tiles[i].setAttribute('class', 'tile');
         }
     }
 };
