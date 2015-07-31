@@ -32,6 +32,11 @@ button:hover {
     text-align: center;
     line-height: 80px;
     background: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.tile:hover {
+    transform: rotate(20deg);
 }
 .red {
     background-color:#F50202;

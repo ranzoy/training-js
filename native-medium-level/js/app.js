@@ -16,12 +16,17 @@ var clickGenerator = {
         this.generateBtn.addEventListener("click", this.generateClick.bind(this));
         this.resultsBtn.addEventListener("click", this.showResults.bind(this));
         this.resetBtn.addEventListener("click", this.resetResults.bind(this));
+        for(var i=0;i<this.tiles.length; i++){
+            this.tiles[i].addEventListener("click", function(){
+                this.innerHTML++;
+            });
+        }
     },
     generateClick: function(){
-        
+
     },
     showResults: function(){
-        for(i=0;i<this.tiles.length; i++){
+        for(var i=0;i<this.tiles.length; i++){
             this.qtyClicks = this.tiles[i].innerHTML;
             switch (true){
                 case this.qtyClicks >= 26 && this.qtyClicks <=50:
@@ -40,7 +45,7 @@ var clickGenerator = {
         }
     },
     resetResults: function(){
-        for(i=0;i<this.tiles.length; i++){
+        for(var i=0;i<this.tiles.length; i++){
             this.tiles[i].innerHTML = '';
             this.tiles[i].setAttribute('class', 'tile');
         }
