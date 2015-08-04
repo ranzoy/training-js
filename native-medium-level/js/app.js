@@ -23,23 +23,26 @@ var clickGenerator = {
         }
     },
     generateClick: function(){
-
+        for(var i=1;i<=this.maxClick;i++){
+            var randClick = Math.floor(Math.random() * this.tiles.length);
+            this.tiles[randClick].innerHTML++;
+        }
     },
     showResults: function(){
         for(var i=0;i<this.tiles.length; i++){
             this.qtyClicks = this.tiles[i].innerHTML;
             switch (true){
                 case this.qtyClicks >= 26 && this.qtyClicks <=50:
-                    this.tiles[i].className += " light-yellow";
+                    this.tiles[i].className = "tile light-yellow";
                     break;
                 case this.qtyClicks >= 51 && this.qtyClicks <=75:
-                    this.tiles[i].className += " yellow";
+                    this.tiles[i].className = "tile yellow";
                     break;
                 case this.qtyClicks >= 76 && this.qtyClicks <=100:
-                    this.tiles[i].className += " orange";
+                    this.tiles[i].className = "tile orange";
                     break;
                 case this.qtyClicks >= 101:
-                    this.tiles[i].className += " red";
+                    this.tiles[i].className = "tile red";
                     break;
             }
         }
