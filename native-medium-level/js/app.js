@@ -38,7 +38,7 @@ var clickGenerator = {
     },
     generateClick: function(){
         for(var i=1;i<=this.maxClick;i++){
-            self.randClick = Math.floor(Math.random() * this.tiles.length);
+            this.randClick = Math.floor(Math.random() * this.tiles.length);
             this.tiles[this.randClick].click();
         }
     },
